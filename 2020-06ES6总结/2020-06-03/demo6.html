@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组的扩展，扩展运算符，三个点(...),将一个数组转换成用逗号隔开的参数序列
+        console.log(...[1,2,3])
+        // 1.求数组中的最大值
+        console.log(Math.max(...[14,23,88]))
+        // 上面通过扩展运算符将数组转换成下面参数的形式进行比较，得出最大值
+        //...[14,23,88]====>14,23,88
+        console.log(Math.max(14,23,88))
+
+        // 2.push的使用，将arr2数组追加到arr1数组中
+        let arr1 = [0,1,2]
+        let arr2 = [3,4,5]
+        //单独追加的8是一个数字，元素，
+        arr1.push(8) 
+        console.log(arr1)
+        // ES5的方式，使用concat()方法连接
+        console.log(arr1.concat(arr2))
+        // ES6的方法，将数组arr2直接追加到arr1上
+        console.log(arr1.push(...arr2))
+        console.log(arr1)
+        // 笨方法
+        // arr1.push(arr2[0])
+        // arr1.push(arr2[1])
+        // arr1.push(arr2[2])
+        // console.log(arr1)
+
+        // //3.合并数组 
+        // var a1 = ["a","b"]
+        // var b1 = ["c","d"]
+        // var c1 = ["e","f"]
+        // // ES5的数组合并方式
+        // var abc = a1.concat(b1,c1)
+        // console.log(abc)
+        // // ES6的数组合并方式--扩展运算符
+        // console.log([...a1,...b1,...c1])
+    </script>
+</body>
+</html>

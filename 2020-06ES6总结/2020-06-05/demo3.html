@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Object.keys()  结果返回一个数组，数组的元素是对象中的key(键)
+        Object.values() 结果返回一个数组，数组中的元素是对象中的value(值)
+        Object.entries() 结果返回一个数组，数组中是键和值一起分开返回
+        */ 
+       const obj = {a1:"a",b1:"b",c1:"c",d1:"d"}
+       console.log(Object.keys(obj))  //["a1", "b1", "c1", "d1"]
+       console.log(Object.values(obj))  //["a", "b", "c", "d"]
+       console.log(Object.entries(obj))  //[["a1", "a"],["b1", "b"],["c1", "c"],["d1", "d"]]
+    </script>
+</body>
+</html>

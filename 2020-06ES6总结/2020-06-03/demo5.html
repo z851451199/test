@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Math.trunc()用来省去数据的小数部分，返回整数部分(不考虑向上取整和向下取整，只是返回整数部分)，类似pareInt()
+        console.log(Math.trunc(4.1)) //4
+        console.log(Math.trunc(4.9)) //4
+        console.log(Math.trunc(-4.1)) //-4
+        console.log(Math.trunc(-4.9)) //-4
+        console.log(Math.trunc(0.1234567)) //0
+        console.log(Math.trunc(-0.1234567)) //-0
+        console.log(Math.trunc('12.345')) //12
+        console.log(Math.trunc('-12.345')) //-12
+        console.log(Math.trunc(true)) //1
+        console.log(Math.trunc(false)) //0
+        console.log(Math.trunc(null)) //0
+        console.log(Math.trunc(undefined)) //NaN
+        console.log("---------------------------------------")
+        /*
+        Math.sign()  判断一个数到底是正数还是负数，还是0
+            参数为正数时:返回+1
+            参数为负数时:返回-1
+            参数为0时:返回0
+            参数为-0时:返回-0
+            其他值时:返回NaN
+        */ 
+        console.log(Math.sign(5))  //1
+        console.log(Math.sign(-5))  //-1
+        console.log(Math.sign(0))  //0
+        console.log(Math.sign(-0))  //-0
+        console.log(Math.sign(NaN))  //NaN
+
+        console.log("---------------------------------------")
+        // Math.cbrt()计算一个立方根,如果参数穿进去的是一个字符串，内部先用Number方法将其转换成数字类型在进行计算
+        console.log(Math.cbrt(-1))  //-1
+        console.log(Math.cbrt(0))  //0
+        console.log(Math.cbrt(1))  //1
+        console.log(Math.cbrt(8))  //2
+        console.log(Math.cbrt("8"))  //2
+
+        console.log("---------------------------------------")
+        // Math.imul()返回两数相乘的结果
+        console.log(Math.imul(2,4))
+        console.log(Math.imul(-2,4))
+        console.log(Math.imul(-2,-4))
+    </script>
+</body>
+</html>

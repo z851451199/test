@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串的拼接
+        var s1 = "任何一件事情,"
+        var s2 = "只要是心甘情愿,"
+        var s3 = "孤独是，你需要别人的时候，你遍寻不着。"
+        // ES5的字符串拼接
+        var str = '安妮宝贝说:'+s1+s2+"总能变的很简单!还说过："+s3
+        console.log(str)
+        // 在ES6拼接字符串时使用字符串模板
+        var s4 = "任何一件事情"
+        var s5 = "只要是心甘情愿"
+        var str2 = `安妮宝贝说：${s4},${s5},总能变的很简单!`
+        console.log(str2)
+        // 在ES6中使用``包裹字符串，即使断开也可以使用这个字符包裹起来合并成一个字符串
+
+        // 在$()中可以嵌套变量，还可以放表达式
+        let x = 1
+        let y = 2
+        // 1+2=3
+        console.log(x+"+"+y+"="+(x+y))
+        console.log(`${x}+${y}=${x+y}`)
+        console.log(`${x}+${y*2}=${x+y*2}`)
+        let obj = {w:1,q:2}
+        console.log(`${obj.w+obj.q}`)
+    </script>
+</body>
+</html>

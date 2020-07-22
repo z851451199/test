@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        数组的解构赋值
+        */ 
+        let [a = true] = []
+        console.log(a) //true
+        let [x,y = 'b'] = ["a"]
+        console.log(x,y) //a b
+        // y是死区，没有声明之前无法直接调用
+        // let [x = y,y = 1]
+        // console.log(x,y) //报错
+        let [w = 2222,q = w] = []
+        console.log(w,q) //2222 2222
+        // 优先赋值给a1
+        let [a1 = 11,b1 = a1] = [22]
+        console.log(a1,b1)  //22 22
+        //如果模板重新赋值，会覆盖初始值
+        let [a2 = 11,b2 = a2] = [1,2]
+        console.log(a2,b2)  //1 2
+        // 模板没有初始值，赋值为空时
+        let[x1,y1] = []
+        console.log(x1,y1) //undefined undefined,从左往右匹配
+    </script>
+</body>
+</html>

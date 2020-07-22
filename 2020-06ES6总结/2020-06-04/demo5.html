@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // flat()能够将嵌套(多维数组)的数组展开(变成一维)，默认只能展开一层(2维)，如果需要展开更多，方法需要带整数参数
+        console.log([1,2,[3,[4,5]]].flat())  //[1, 2, 3, [4,5]]
+        console.log([1,2,[3,[4,5]]].flat(2))  //[1, 2, 3, 4, 5],想要展开几层数组，括号内传整数的参数
+        console.log([1,2,,3,4,,5,6].flat())  //[1, 2, 3, 4, 5, 6],能够自动跳过空数组元素
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Array.from()能够将对象转成真正的数组，有length属性的对象，都可以被from转成真正的数组
+        */ 
+        let arr = {
+            "0":"a",
+            "1":"b",
+            "2":"c",
+            length:3
+        }
+        let arr2 = Array.from(arr)
+        console.log(arr2) //["a", "b", "c"]
+
+        // 函数中值也可以通过from转换成数组
+        console.log(Array.from({length:5},()=>"Tom"))  //["Tom", "Tom", "Tom", "Tom", "Tom"]
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fill()填充数组,括号中的参数就是要填充的数组元素值
+        console.log(["a","b","c"].fill(1)) // [1, 1, 1]
+        console.log(new Array(5).fill(0))  //[0, 0, 0, 0, 0]
+
+        // keys()---数组的索引下标,values()---数组的元素
+        // 这两个方法都会返回一个遍历器的对象(Iterator),想要具体取得里面的值，需要使用for...of循环
+        let arr = ["a","b","c","d"]
+        let keys = arr.keys() //能够将数组中的索引下标存放在该方法中
+        let values = arr.values() //能够将数组中的元素值存放在该方法中
+        console.log(keys,values)
+        // 遍历key
+        for(let key of keys){
+            console.log(key)
+        }
+        // 遍历value
+        for(let val of values){
+            console.log(val)
+        }
+        // includes()返回的结果是一个布尔值，检测某个数组是否包含给定的某个元素
+        console.log([1,2,3].includes(3,3))  //false
+        console.log([1,2,3].includes(3,2))  //true
+        console.log([1,2,3].includes(3,-1))  //true
+        console.log([1,2,3].includes(3,4))  //false
+        // 第一个参数是要检索匹配的元素值，第二个参数代表的元素检索的起始位置，默认从0开始
+        // 如果第二个参数为负数，则表叔倒数，如果值大于数组的长度，则会重置为0开始
+    </script>
+</body>
+</html>

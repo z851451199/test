@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        解构赋值:ES6允许按照一定的模式，从数组对象中提取值，对变量进行赋值，这样被称为解构
+        本质山就是套模板，模式匹配，只要等号两边模式都相等，左边的变量就会被右边的值赋值，如果解构不成功，则赋值一个undefined
+        */ 
+        var a = 10
+        var b = 20
+        var c = 30
+        console.log(a,b,c)
+        // 只要左右两遍的模式匹配即可，数组是有顺序
+        var [a,b,c] = [11,22,33]
+        console.log(a,b,c)
+        // 前后按照给的饿顺序一一对应
+        var [b,a,c] = [11,22,33]
+        console.log(a,b,c)
+        // 前面什么样的模板，后面就要赋什么样的值
+        let [aa,[[bb],[cc]]] = [111,[[222],[333]]]
+        // var [aa,[[bb],[cc]]] = [111,[[222],[333]]]
+        console.log(aa,bb,cc)
+        // 可以匹配不同的值，单个和多个
+        let [d,...e] = [1000,2000,3000,4000]
+        console.log(d,e) //d = 1000;e=[2000,3000,4000]
+        // 如果解构不成功，缺失赋的值则会自动添加一个undefied
+        let [q,w] = [100000]
+        console.log(q,w) //100000 undefined
+        // 不完全解构，左边的变量少于右边的值，依旧能够解构成功，会缺失值
+        let [a1,b1] = [1,2,3]
+        console.log(a1,b1)
+        // 如果解构模板有初始值，则要判断赋的值，如果赋值完全匹配则优先使用赋值，如果不匹配则使用默认初始值
+        let [a2=1,b2=2] = [3,4]
+        console.log(a2,b2)
+    </script>
+</body>
+</html>

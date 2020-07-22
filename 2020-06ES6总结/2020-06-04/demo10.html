@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES5的继承是原型的继承
+        function Person(name,age){  //人类(类，构造函数)
+            this.name = name
+            this.age = age
+        }
+        Person.prototype.showName = function (){
+            return this.name
+        }
+        Person.prototype.showAge= function (){
+            return this.age
+        }
+        // 工人类
+        function Worker(name,age){
+            // 继承属性需要使用方法apply()
+            Person.apply(this.arguments)
+        }
+
+        // 先写原型的继承,将要继承的类的所有全部都继承在当前类的原型上
+        Worker.prototype = new Person()
+        // 实例化
+        var p1 = new Person("Tom_p",22)
+        console.log(p1.showName())  //Tom_p
+        // 因为将Person类继承到了worker类上，所以直接使用Person类进行实例化
+        var w1 = new Person("Tom_w",23)
+        console.log(w1.showName())  //Tom_w,说明的确继承了Person类
+    </script>
+</body>
+</html>

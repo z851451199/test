@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象的属性可以有默认值，如果实例化的对象不赋值，则会直接使用默认值
+        class Person{
+            constructor(name="default",age=0){  //括号中的属性带的属性值是默认的初值
+                this.name = name
+                this.age = age
+            }
+            show(){
+                return this.name+"-"+this.age
+            }
+        }
+        var p1 = new Person();
+        console.log(p1.show()) //default-0,实例化兑现没有传值，则使用属性的默认值
+        var p2 = new Person("Tom",22)
+        console.log(p2.show())  //Tom-22,实例化对象传的值将会覆盖原本默认的初始值
+    </script>
+</body>
+</html>

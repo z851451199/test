@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Object.is()比较两个值在严格意义上是否相等，与(===)作用基本一致
+        注意1：+0不等-0
+        注意2：NaN等于自己的(在ES5中NaN是六亲不认的，不等于任何值，包括自己)
+        */
+        //ES5中  
+        console.log(+0 === -0)  //true
+        console.log(NaN === NaN) //false
+        //ES6
+        console.log(Object.is(+0,-0)) //false
+        console.log(Object.is(NaN,NaN)) //true
+
+        /*
+        对象合并Object.assign(),合并期间如果有同名的属性，或者多个属性(key)同名，则执行后者覆盖前者的规律
+        */ 
+       const obj1 = {a:1,b:2}
+       const obj2 = {b:3,c:4}
+       const obj3 = {c:5,d:6}
+       console.log(Object.assign(obj1,obj2,obj3))  //{a: 1, b: 3, c: 5, d: 6}
+
+        //如果遇到null--空对象，undefined，是五发转成对象，直接作为参数转回报错，但是如果不在首位，则不会报错
+        // console.log(Object.assign(null))   //报错
+        // console.log(obj1.assign(undefined)) //报错
+        const a = {a:1}
+        console.log(Object.assign(a,null))  //{a: 1}
+        console.log(Object.assign(a,undefined))  //{a: 1}
+
+        // 非对象的值(数值，字符串，布尔)像这些值，不在首位也可以合并,遇到字符串会以数组的行拷贝到目标对象中，其他的值都不会生效
+        const v1 = "abc"
+        const v2 = true
+        const v3 = 100
+        const obj = Object.assign(v1,v2,v3)
+        console.log(obj)  //{"abc"}
+        const objs = Object.assign({},v1,v2,v3)
+        console.log(objs)  //[a,b,c]===>{0: "a", 1: "b", 2: "c"}
+        const objs1 = Object.assign(v2,v3)
+        console.log(objs1)  //Boolean {true}
+        const objs2 = Object.assign({},v2,v3)
+        console.log(objs2)  //{}
+    </script>
+</body>
+</html>

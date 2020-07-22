@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        学了这么多东西，并不是一定要全部使用到，合理酌情使用，满足项目需求，对于一个项目来说，肯定百分百实现功能，
+        还原原型，个人比较喜欢纯脚本(JS),这么框架知识点中，那个顺手，合理就用那个
+        */ 
+        //
+        // 1.对象的扩---简介的对象声明
+        // 传统{k:v}
+        const a = "abc"
+        const b = {a}
+        console.log(b)  //{a: "abc"}
+        // 2.允许对象中，直接写变量，属性名就是变量名，属性的值就是变量的饿值
+        function show(x,y){
+            // 函数的参数就相当于是在函数内部定义的局部变量
+            return {x,y}  //函数得参数对于对象来说就是对象的key,传进来的实参就是对象对应的value
+        }
+        console.log(show(1,2))  //{x: 1, y: 2}
+        function show1(x,y){
+            return {x1:x,y1:y}  //函数得参数是对象对应的value值
+        }
+        console.log(show1(3,4))  //{x1: 3, y1: 4}
+    </script>
+</body>
+</html>

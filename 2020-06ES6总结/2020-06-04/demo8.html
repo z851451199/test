@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6面向对象
+        // 定义的类
+        class Person{
+            // 构造器，用来初始化属性
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            // 具体实现的方法
+            showName(){
+                return this.name
+            }
+            showAge(){
+                return this.age
+            }
+        }
+        // 实例化对象
+        var p1 = new Person("Tom1",21)
+        var p2 = new Person("Tom2",23)
+        console.log(p1.showName())
+        console.log(p2.showName())
+        console.log(p1.showAge())
+        console.log(p2.showAge())
+        console.log(p1.showAge == p2.showAge)  //true
+        console.log(p1.constructor == Person)  //true
+    </script>
+</body>
+</html>

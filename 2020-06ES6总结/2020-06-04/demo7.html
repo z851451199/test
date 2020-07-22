@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 传统的面向对象的写法
+        // 通过使用方法来模拟类，构造方法(我们将属性的初始化放在构造方法中)
+        function Person(name,age){
+            this.name = name
+            this.age = age
+        }
+        // 添加方法时，是要添加到原型上的
+        Person.prototype.showName = function (){
+            return this.name
+        }
+        Person.prototype.ShowAge = function (){
+            return this.age
+        }
+        // 实例化对象
+        var p1 = new Person("Tom1",21)
+        var p2 = new Person("Tom2",24)
+        // 通过实例化的对象调用方法
+        console.log(p1.showName())  //Tom1
+        console.log(p2.showName())  //Tom2
+        console.log(p1.ShowAge())  //21
+        console.log(p2.ShowAge())  //24
+        console.log(p1.showName == p2.showName)  //true,实例化的对象调用的方法时添加在原型上面的方法，所以调用的是同一个，返回true
+        console.log(p1.constructor == Person) //true,实例化的对象的构造方法也是同一个
+</script>
+</body>
+</html>

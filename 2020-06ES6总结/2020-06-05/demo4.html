@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        五中基本数据类型:number,string,boolean,null,undefined
+        六中数据类型:number,string,boolean,null,undefined,object
+        数据类型的第七种:Symbol----原始数据类型，以中类似于字符串的数据类型，是一个方法形式的数据类型，并且可以带参数
+        ES6中的七种数据类型:number,string,boolean,null,undefined,object,Symbol
+        */ 
+       let s1 = Symbol("aa")
+       let ss = "aaaaa"
+       let s2 = Symbol("bb")
+       console.log(s1)  //Symbol(aa)
+        // Symbol函数对象不可以使用new,Symbol中的值不是对象，所以不能添加属性   
+        // 如果Symbol的参数是一个对象，就会自动调用toString()方法，自动将数值转换成字符串，然后才会生成Symbol类型的值
+        const obj = {
+            toString(){
+                return "abcdef"
+            }
+        }
+        const sym = Symbol(obj)
+        console.log(sym)  //Symbol(abcdef),返回的结果是将abcdef转换成了Symbol类型的值
+
+        // 在Symbol函数中的参数只表示当前状态的值，因此相同参数的Symbol函数返回的结果是不相同的
+        // 六亲不认
+        // 没有参数的时候
+        let sy1 = Symbol();
+        let sy2 = Symbol();
+        console.log(sy1 === sy2)  //false
+        // 有参数时
+        let sy3 = Symbol("aa")
+        let sy4 = Symbol("aa")
+        console.log(sy3 === sy4) //false
+
+        // 不可以与其他类型的值参与运算
+        let a = Symbol("abcd")
+        // console.log(a+"efg")  //报错
+
+        // Symbol值可以显示的转换成字符串，也可以转换为布尔，但是不可以转换成数值类型
+        let a1 = Symbol("abc")
+        console.log(String(a1))  //将数据整体转换成字符串"Symbol(abc)"
+        console.log(a1.toString())  //将数据整体转换成字符串"Symbol(abc)"
+
+        let a2 = Symbol()
+        console.log(Boolean(a2))  //true
+        console.log(Boolean(!a2))  //false
+
+        let a3 = Symbol("1")
+        console.log(Number(a3))  //不能转成数值类型，报错
+    </script>
+</body>
+</html>

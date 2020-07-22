@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Symbol可作为属性名称,但是对象不可以用"."调用，需要使用"[]"来调用
+        const mySy = Symbol()
+        // const a = {mySy:"hellow"}
+        const a = {}
+        a.mySy = "hellow"  //此处的mySy只能看成是字符串，而不能看成是Symbol类型的数据
+        console.log(a.mySy)
+        console.log(a[mySy])  //undefined
+        console.log(a["mySy"]) //hellow
+        // Symbol.for()和Symbol.keyFor()
+        /*
+        方法中可以传一个字符串的参数，然后用来检索有没有以该参数作为名称的Symbol的数据值，如果有则返回Symbol
+        值,否则将会重新创建一个新的值并且返回
+        */ 
+        let s1 = Symbol.for("aa")
+        let s2 = Symbol.for("aa")
+        console.log(s1 === s2)  //true
+        // Symbol.keyFor()返回已经登记、记录过的Symbol类型的值,返回时返回一个使用Symbol.for()定义过的值，否则返回undefined
+        let s3 = Symbol.for("aa")
+        console.log(Symbol.keyFor(s3))  //aa
+        let s4 = Symbol("bb")
+        console.log(Symbol.keyFor(s4))  //undefined
+    </script>
+</body>
+</html>

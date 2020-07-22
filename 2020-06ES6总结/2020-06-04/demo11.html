@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6的继承
+        class Person{
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+            showName(){
+                return this.name
+            }
+            showAge(){
+                return this.age
+            }
+        }
+        // 工人类,继承使用关键词extends
+        class Worker extends Person{
+            constructor(name,age,job="web前端开发"){//job属性是私有
+                // 继承父类属性，使用方法super(),继承超父类
+                super(name,age)
+                // 单独的属性，需要单独去实例化
+                this.job = job
+            }
+            //与父级不共有的方法需要单独去写，私有
+            showJob(){
+                return this.job
+            }
+        }
+
+        var p1 = new Person("aaa",18)
+        // 因为继承了Person类，所以使用Person实例化是被允许的
+        var w1 = new Person("ww1",20)
+        var w2 = new Worker("ww2",22)
+        var w3 = new Worker("Tom",24,"web前端开发工程师")
+        var w4 = new Person("Tom4",25,"web前端开发工程师4")
+        console.log(p1.showName())  //aaa
+        console.log(w1.showName()) //ww1
+        console.log(w2.showJob())  //web前端开发
+        console.log(w3.showName()+"-"+w3.showAge()+"-"+w3.showJob())  //Tom-24-web前端开发工程师
+        console.log(w4.showName()+"-"+w4.showAge()+"-"+w4.showJob()) //会报错，因为person并没有job属性，以及showJob方法是私有方法
+    </script>
+</body>
+</html>

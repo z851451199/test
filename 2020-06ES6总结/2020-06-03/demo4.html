@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        repeat()对字符串的重复，括号中可以接受一个参数，可以小数，但是小数会自动变成整数，相当于调用了parsint
+        */ 
+        console.log("*".repeat(2.1))
+        console.log("abc".repeat(8))
+        /*
+        padStart()头部补全
+        padEnd()尾部补全
+        里面接受两个参数，第一个参数是字符串补全生效最大的长度，第二个参数就是用来补全的字符
+        第一个补全的个数(字符串的个数) = 原本有的字符个数+要补全的字符串个数
+        */ 
+        // 如果原字符串的长度，等于或者大于最大长度，则补全字符串的功能无效
+        console.log("xxx".padStart(2,"ab"))
+        console.log("xxx".padEnd(2,"cd"))
+        console.log("xxx".padStart(5,"ab"))
+        console.log("xxx".padEnd(7,"cd"))
+        // 如果补全的字符串与原字符串，两者的长度之和超过了最大长度，则会按照最大长度截取补全
+        console.log("abc".padStart(10,"1234567890"))  //1234567abc
+        // 如果省略第二个补全字符串的参数，则默认使用空格补全
+        var ss ="c"
+        // ss.padStart(4)
+        ss.padStart(4) //头部添加空白字符
+        console.log(ss.length)  //查看长度
+        console.log(ss.padStart(4).length)
+    </script>
+</body>
+</html>

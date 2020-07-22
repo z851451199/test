@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Object.setPrototypeOf()  设置对象的Prototype对象，如果第一个参数不是对象则会自动转换成对象
+            如果遇到null和undefined则会出错
+        Object.getPrototypeOf()  读取对象的Prototype对象，如果参数数不是一个对象，会被自动转为对象，
+            如果遇到null和undefined则会出错，五发转换
+        */ 
+       console.log(Object.setPrototypeOf(1,{}) === 1)
+       console.log(Object.setPrototypeOf("1",{}) === "1")
+       console.log(Object.setPrototypeOf(true,{}) === true)
+    //    console.log(Object.setPrototypeOf(undefined,{}))
+    //    console.log(Object.setPrototypeOf(null,{}))
+
+       console.log(Object.getPrototypeOf(1))
+       console.log(Object.getPrototypeOf("1"))
+       console.log(Object.getPrototypeOf(true))
+       console.log(Object.getPrototypeOf(undefined))
+       console.log(Object.getPrototypeOf(null))
+    </script>
+</body>
+</html>

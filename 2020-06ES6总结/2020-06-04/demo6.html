@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义对象，key-value------ES5的单体模式
+        var person = {
+            name:"Tom",
+            age:21,
+            showName:function (){
+                return this.name
+            },
+            showAge:function (){
+                return this.age
+            }
+        }
+        console.log(person.showName())
+        console.log(person.showAge())
+
+        // ES6中的单体，不需要key,对象中的key定义在外面(可以如此理解)
+        var name = "Tom1"
+        var age = "22"
+        var person1 = {
+            name,
+            age,
+            showName(){
+                return this.name
+            },
+            showAge(){
+                return this.age
+            }
+        }
+        console.log(person1.showName())
+        console.log(person1.showAge())
+    </script>
+</body>
+</html>

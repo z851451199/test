@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        copywithin(),指定位置的复制数组元素，将某个为位置的元素，复制到另一个位置，并且会覆盖掉原来位置上已经有的值，在返回当前的数组
+        copywithin(target,start=0,end=this.length)
+        target(必需):从该位置开始替换数据，如果出现负数，则意味着倒数
+        start(可选):从该位置开始读取数据，默认为0，如果出现负数，则意味着倒数
+        end(可选):到该位置前停止读取，默认等于数组的最大长度，如果出现负数，则意味着倒数
+        */ 
+        console.log([1,2,3,4,5].copyWithin(0,3))  //[4, 5, 3, 4, 5]
+        /*
+        从3号位置开始(不包含当前数字的位置)直到结束的所有元素(4,5)进行复制，复制到从0号为开始的位置
+        放置，并且会覆盖原来位置上的元素(1,2)
+        */ 
+        console.log([1,2,3,4,5].copyWithin(0,2))  //[3,4,5,4,5]
+        // 从2号为开始取值(不包含2号位)【3，4，5】，复制到从0号位开始将替换【1，2，3】，最终得到的结果【3，4，5，4，5】
+        console.log([1,2,3,4,5].copyWithin(0,2,3))  //[3, 2, 3, 4, 5]
+        // 从2号位开始(不报韩2号位)结束于3号位，所以取出一个值【3】，将其从0号位添加，覆盖原来的值【1】，最终结果为[3,2,3,4,5]
+    </script>
+</body>
+</html>
